@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import { reducer, initialState } from "./reducer/app.reducer";
+import FileLoader from "./components/file-loader";
+import FileContent from "./components/file-content";
+import Search from "./components/search";
+import "./App.css";
 
-function App() {
+const App: React.FC = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <FileLoader dispatch={dispatch} />
+      <FileContent state={state} />
+      <Search state={state} dispatch={dispatch} />
+    </>
   );
-}
+};
 
 export default App;

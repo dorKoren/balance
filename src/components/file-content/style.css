@@ -1,0 +1,11 @@
+.higlight {
+  background-color: var(--higlight);
+}
+
+.higlight--active {
+  background-color: var(--higlight-active);
+}
+
+.text-wrapper {
+  white-space: break-spaces;
+}

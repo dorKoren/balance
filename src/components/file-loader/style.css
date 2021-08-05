@@ -1,0 +1,7 @@
+.file-loader {
+  display: flex;
+}
+
+.file-loader label {
+  margin-inline-end: 10px;
+}
